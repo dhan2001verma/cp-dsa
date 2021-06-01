@@ -1,0 +1,26 @@
+
+#include<bits/stdc++.h>
+# define pb push_back
+#define pii pair<int,int>
+#define mp make_pair
+#define ll long long int
+#define lop(i,a,b) for(int i=0;i<(a);(b)++)
+using namespace std;
+int main()
+{
+    
+    int tc;
+    cin>>tc;
+    int a,b,c,d,k;
+    while(tc--)
+    {//BRUTE FORCE O(1)COMPLEXITY
+     cin>>a>>b>>c>>d>>k;
+     int dist=abs(d-b)+abs(c-a);
+     string ans=(k>=dist && (k-dist)%2==0 ? "YES":"NO");
+     cout<<ans<<endl;
+    }
+
+
+    
+    return 0;
+}
