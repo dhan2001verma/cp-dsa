@@ -1,0 +1,27 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    
+    int tc;
+    cin>>tc;
+    while(tc--)
+    {  //BRUTE FORCE
+        int n;
+        cin>>n;
+        /*int l=1,r=n;
+        while(l<r)
+        {
+            l+=1;
+            r-=1;
+        }
+        cout<<l<<endl;
+        */
+        cout<<(n+1)/2<<endl;//o(1)complexity
+    }
+
+
+    
+    return 0;
+}
