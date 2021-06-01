@@ -7,54 +7,80 @@
 #define lop(i,a,b) for(int i=(a);i<(b);i++)
 using namespace std;
 
+ 
 void solve()
 {
-    ll n,q;
-    cin>>n>>q;
-    string s;
-    cin>>s;
-    int location=0;
-    lop(i,0,n-1)
+  int n, q;
+  cin >> n >> q;
+  string s;
+  cin >> s;
+  int location = 0;
+  for (int i = 0; i < n - 1; i++)
+  {
+    if (s[i] == s[i + 1])
     {
-        if(s[i]==s[i+1])location+=2;
-        else location++;
+      location += 2;
     }
-
-    while(q--){
-        ll pos;cin>>pos;
-        pos--;
-        s[pos]=(s[pos]=='0'?'1':'0');
-        if(pos==0){
-            if(pos+1<n);
-            {
-                if(s[pos]==s[pos+1])location++;
-                else location--;
-            }
-        }
-        else if(pos==n-1)
-        {
-            if(pos-1>=0)
-            {
-                if(s[pos]==s[pos-1])location++;
-                else location--;
-            }
-        }
-        else{
-            if(s[pos-1]==s[pos+1]){
-                location+=2;
-            }
-            else location-=2;
-        }
-        cout<<location<<endl;
+    else {
+      location++;
     }
+  }
+ 
+  while (q--)
+  {
+    int pos;
+    cin >> pos;
+    pos--;
+    s[pos] = (s[pos] == '0' ? '1' : '0');
+ 
+    if (pos == 0)
+    {
+      if (pos + 1 < n)
+      {
+        if (s[pos] == s[pos + 1])
+          location++;
+        else
+          location--;
+      }
+ 
+    }
+    else if (pos == n - 1)
+    {
+      if (pos - 1 >= 0)
+      {
+        if (s[pos] == s[pos - 1])
+          location++;
+        else {
+          location--;
+        }
+      }
+ 
+    }
+    else {
+      if (s[pos - 1] == s[pos + 1])
+      {
+        if (s[pos] == s[pos - 1])
+          location += 2;
+        else
+          location -= 2;
+ 
+      }
+ 
+    }
+    cout << location << endl;
+ 
+  }
 }
-int  main()
-{   
-    ll tc;
-    cin>>tc;
-    while(tc--)
-    {
-     solve();
-    }
-    return 0;
+int32_t main()
+{
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+ 
+  int t;
+  cin >> t;
+ 
+  while (t--)
+    solve();
+ 
+  return 0;
 }
