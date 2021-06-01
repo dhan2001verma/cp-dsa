@@ -1,0 +1,31 @@
+
+#include<bits/stdc++.h>
+#define pb push_back
+#define pii pair<int,int>
+#define mp make_pair
+#define ll long long int
+#define lop(i,a,b) for(int i=(a);i<(b);i++)
+using namespace std;
+int main()
+{   
+    ll tc;
+    cin>>tc;
+    while(tc--)
+    {
+     ll n,k;cin>>n>>k;
+     vector<ll>arr(n);
+     for(auto &x:arr) cin>>x;
+     ll s1=0,s2=0;
+     sort(arr.begin(),arr.end(),greater<>());
+     lop(i,0,2*k){
+        (i%2==0 ? s1:s2) +=arr[i];
+     }
+     s2+=arr[2*k];
+     cout<<max(s1,s2)<<endl;
+
+    }
+
+
+    
+    return 0;
+}
